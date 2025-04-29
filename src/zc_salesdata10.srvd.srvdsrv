@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service definition'
+define service ZC_SALESDATA10 {
+  expose ZC_SalesHdr10;
+  expose ZC_SalesItm10;
+}

@@ -1,0 +1,69 @@
+@Metadata.layer: #CORE
+@UI:{ headerInfo: { typeNamePlural: 'Sales Orders',
+ title: { type:#STANDARD, value:
+'Salesorder' } } }
+
+annotate entity ZC_SalesHdr10 with
+{ 
+  @UI.facet: [{ id: 'SalesOrder',
+ purpose: #STANDARD,
+ label: 'Sales Order',
+ type: #IDENTIFICATION_REFERENCE,
+ position: 10
+ },
+ { 
+    id: 'SalesOrderItem',
+    purpose: #STANDARD,
+    label:'Sales Order Items',
+    type:#LINEITEM_REFERENCE,
+    position: 20,
+    targetElement: '_SalesItem'
+ }
+ ]
+ @UI.hidden: true
+ Salesorderuuid;
+ @UI.lineItem: [{ position:10 }]
+ @UI.identification: [{ position: 10 }]
+ Salesorder;
+ @UI.lineItem: [{ position:20 }]
+ @UI.identification: [{ position: 20 }]
+ Salesordertype;
+ @UI.lineItem: [{ position:30 }]
+ @EndUserText.label: 'Description'
+ Description;
+ @UI.lineItem: [{ position:40 }]
+ @UI.identification: [{ position: 40 }]
+ Salesorganization;
+ @UI.lineItem: [{ position:50 }]
+ @UI.identification: [{ position: 50 }]
+ Soldtoparty;
+ @UI.lineItem: [{ position:60},
+                  { type:#FOR_ACTION, dataAction: 'setStatus', label: 'Set Complete' }]
+ @UI.identification: [{ position: 60 },
+                  { type:#FOR_ACTION, dataAction: 'setStatus', label: 'Set Complete' }]
+ status;
+ @UI.lineItem: [{ position:70 }]
+ @UI.identification: [{ position: 70 }]
+ Distributionchannel;
+ @UI.lineItem: [{ position:80 }]
+ @UI.identification: [{ position: 80 }]
+ Documentreason;
+ @UI.lineItem: [{ position:90 }]
+ @UI.identification: [{ position: 90 }]
+ Totalnetamount;
+ @UI.hidden: true
+ Transactioncurrency;
+ @UI.hidden: true
+ Createdbyuser;
+ @UI.hidden: true
+ Creationat;
+ @UI.hidden: true
+ Lastchangedbyuser;
+ @UI.hidden: true
+ Lastchangedat;
+ @UI.hidden: true
+ Locallastchangedat;
+
+
+
+}
